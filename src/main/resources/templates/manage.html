@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8">
+<title>Manage Membership - The PlatinumSelectExclusive Club</title>
+<meta name="description"
+	content="Example Website for Accenture Internal Educational Use Only">
+<meta name="author" content="Andrew Wang">
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+	rel="stylesheet" type="text/css">
+
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+
+</head>
+<body>
+
+	<script>
+		function togglesDiv(value) {
+			
+			document.getElementById("insertform").reset();
+			document.getElementById("deleteform").reset();
+			
+			var insertsuccessdiv = document.getElementById("insertsuccess");
+        	insertsuccessdiv.style.display = "none";
+			var insertfaildiv = document.getElementById("insertfail");
+			insertfaildiv.style.display = "none";
+			var deletesuccessdiv = document.getElementById("deletesuccess");
+        	deletesuccessdiv.style.display = "none";
+			var deletefaildiv = document.getElementById("deletefail");
+			deletefaildiv.style.display = "none";
+			
+			var insertdiv = document.getElementById("insert");
+			insertdiv.style.display = "none";
+			var retrievediv = document.getElementById("retrieve");
+			retrievediv.style.display = "none";
+			var deletememberdiv = document.getElementById("deletemember");
+			deletememberdiv.style.display = "none";
+			if (value == insert) {
+				var catdiv = document.getElementById("insert");
+				if (catdiv.style.display == "") {
+					catdiv.style.display = "none";
+				} else {
+					catdiv.style.display = "";
+				}
+			} else if (value == retrieve) {
+				var catdiv = document.getElementById("retrieve");
+				if (catdiv.style.display == "") {
+					catdiv.style.display = "none";
+				} else {
+					catdiv.style.display = "";
+				}
+			} else if (value == deletemember) {
+				var catdiv = document.getElementById("deletemember");
+				if (catdiv.style.display == "") {
+					catdiv.style.display = "none";
+				} else {
+					catdiv.style.display = "";
+				}
+			}
+		}
+	</script>
+
+	<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<p></p>
+	</div>
+	<div class="container">
+		<div class="value-props row">
+			<div class="three columns value-prop" align="center">
+				<img class="value-img" src="../images/update.png" height="50px"
+					onclick="togglesDiv(insert);">
+				<p onclick="togglesDiv(insert);">Adding Member Data</p>
+			</div>
+			<div class="three columns value-prop" align="center">
+				<img class="value-img" src="../images/update.png" height="50px"
+					onclick="togglesDiv(retrieve);">
+				<p onclick="togglesDiv(retrieve);">Retrieving Member Data</p>
+			</div>
+			<div class="three columns value-prop" align="center">
+				<img class="value-img" src="../images/update.png" height="50px"
+					onclick="togglesDiv(deletemember);">
+				<p onclick="togglesDiv(deletemember);">Deleting Member Data</p>
+			</div>
+			<div class="three columns value-prop" align="center">
+				<a href="/"> <img class="value-img" src="../images/update.png"
+					height="50px">
+				</a>
+				<p>HomePage</p>
+			</div>
+		</div>
+	</div>
+	<div class="docs-section">
+		<div class="container" style="text-align: left">
+			<h3 style="text-align: left">Membership Data Management</h3>
+			<h6 style="text-align: left">Choose from the above four options</h6>
+			<div class="docs-section" id="insert">
+				<form id="insertform"
+					action="http://andrew-web-grumpy-llama.cfapps.io/insertMember">
+					<div class="row">
+						<div class="six columns">
+							<label for="firstname">First Name</label> <input
+								class="u-full-width" type="text" placeholder="John"
+								id="firstname">
+						</div>
+						<div class="six columns">
+							<label for="lastname">Last Name</label> <input
+								class="u-full-width" type="text" placeholder="Doe" id="lastname">
+						</div>
+					</div>
+					<div class="row">
+						<div class="three columns">
+							<label for="age">Age</label> <input class="u-full-width"
+								type="number" placeholder="25" id="age">
+						</div>
+						<div class="nine columns">
+							<label for="email">Email</label> <input class="u-full-width"
+								type="email" placeholder="john.doe@accenture.com" id="email">
+						</div>
+					</div>
+					<div class="row">
+						<p></p>
+					</div>
+					<div class="row">
+						<div class="three columns">
+							<input class="button-primary" type="submit" value="Add Member">
+						</div>
+						<div class="nine columns" align="left">
+							<div class="row" id="insertsuccess" style="display: none">
+								<p>Member Added</p>
+							</div>
+							<div class="row" id="insertfail" style="display: none">
+								<p>Error Adding Member</p>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="docs-section" id="retrieve" style="display: none">
+				<p>def</p>
+			</div>
+			<div class="docs-section" id="deletemember" style="display: none">
+				<form id="deleteform"
+					action="http://andrew-web-grumpy-llama.cfapps.io/deleteMember">
+					<div class="row">
+						<div class="six columns">
+							<label for="firstnamedelete">First Name</label> <input
+								class="u-full-width" type="text" placeholder="John"
+								id="firstnamedelete">
+						</div>
+						<div class="six columns">
+							<label for="lastnamedelete">Last Name</label> <input
+								class="u-full-width" type="text" placeholder="Doe" id="lastnamedelete">
+						</div>
+					</div>
+					<div class="row">
+						<p></p>
+					</div>
+					<div class="row">
+						<div class="three columns">
+							<input class="button-primary" type="submit" value="Delete Member">
+						</div>
+						<div class="nine columns" align="left">
+							<div class="row" id="deletesuccess" style="display: none">
+								<p>Member Deleted</p>
+							</div>
+							<div class="row" id="deletefail" style="display: none">
+								<p>Error Deleting Member</p>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<script type='text/javascript'>
+		$("#insertform").submit(function(event) {
+
+			event.preventDefault();
+
+			var $form = $(this), url = $form.attr('action');
+
+			var request = new XMLHttpRequest();
+			request.onreadystatechange = function() {
+			    if (request.readyState == XMLHttpRequest.DONE) {
+			        if (request.responseText.includes("\"success\":\"true\"")) {
+			        	var insertsuccessdiv = document.getElementById("insertsuccess");
+			        	insertsuccessdiv.style.display = "none";
+						var insertfaildiv = document.getElementById("insertfail");
+						insertfaildiv.style.display = "none";
+						insertsuccessdiv.style.display = "";
+			        } else {
+			        	var insertsuccessdiv = document.getElementById("insertsuccess");
+			        	insertsuccessdiv.style.display = "none";
+						var insertfaildiv = document.getElementById("insertfail");
+						insertfaildiv.style.display = "";
+			        }
+			    }
+			}
+			request.open("POST", url, true);
+			request.setRequestHeader("firstname", $('#firstname').val());
+			request.setRequestHeader("lastname", $('#lastname').val());
+			request.setRequestHeader("age", $('#age').val());
+			request.setRequestHeader("email", $('#email').val());
+
+			request.send(null);
+			document.getElementById("insertform").reset();
+		});
+	</script>
+	<script type='text/javascript'>
+		$("#deleteform").submit(function(event) {
+
+			event.preventDefault();
+
+			var $form = $(this), url = $form.attr('action');
+
+			var request = new XMLHttpRequest();
+			request.onreadystatechange = function() {
+			    if (request.readyState == XMLHttpRequest.DONE) {
+			        if (request.responseText.includes("\"success\":\"true\"")) {
+			        	var deletesuccessdiv = document.getElementById("deletesuccess");
+			        	deletesuccessdiv.style.display = "none";
+						var deletefaildiv = document.getElementById("deletefail");
+						deletefaildiv.style.display = "none";
+						deletesuccessdiv.style.display = "";
+			        } else {
+			        	var deletesuccessdiv = document.getElementById("deletesuccess");
+			        	deletesuccessdiv.style.display = "none";
+						var deletefaildiv = document.getElementById("deletefail");
+						deletefaildiv.style.display = "";
+			        }
+			    }
+			}
+			request.open("POST", url, true);
+			request.setRequestHeader("firstname", $('#firstnamedelete').val());
+			request.setRequestHeader("lastname", $('#lastnamedelete').val());
+
+			request.send(null);
+			document.getElementById("deleteform").reset();
+		});
+	</script>
+	<p style="font-size:6px" align="center">Created using <a href="http://getskeleton.com">Skeleton</a>. All parts of <a href="http://getskeleton.com">Skeleton</a> are free to use and abuse under the
+		<a href="https://github.com/dhg/Skeleton/blob/master/LICENSE.md">open-source MIT license</a>.</p>
+	<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

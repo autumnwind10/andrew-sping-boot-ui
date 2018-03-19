@@ -1,0 +1,8 @@
+---
+applications:
+- name: andrew-web-ui
+  memory: 750M
+  instances: 1
+  disk_quota: 500M
+  path: ./target/andrew-sping-boot-ui-0.0.1-SNAPSHOT.jar
+  random-route: true
