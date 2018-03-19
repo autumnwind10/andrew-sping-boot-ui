@@ -1,2 +1,6 @@
 ---
 name: andrew-spring-boot-ui
+disk_quota: 1G
+instances: 1
+memory: 1G
+path: ../target/andrew-sping-boot-ui-0.0.1-SNAPSHOT.jar
