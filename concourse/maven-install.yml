@@ -1,6 +1,19 @@
 platform: linux
 
+inputs:
+  - name: source-code
+
 run:
-  path: "ls"
-  args: ["-lrt", "source-code"]
-#  args: ["-DskipTests=true", "clean", "package"]
+  path: sh
+  args:
+  - -exc
+  - |
+    whoami
+    ls -lrt
+    chmod -R 777 source-code
+    cd source-code
+    ls -lrt
+    env
+    pwd
+    whoami
+    mvnw -DskipTests=true clean package
