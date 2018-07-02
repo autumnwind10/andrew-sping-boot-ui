@@ -4,6 +4,5 @@ inputs:
   - name: source-code
 
 run:
-  path: "ls"
-  args: ["-lrt"]
-#  args: ["-lrt", ";", "chmod", "-R", "777", "source-code/*"]
+  path: "chmod"
+  args: ["-R", "777", "source-code/*"]
