@@ -4,5 +4,5 @@ inputs:
   - name: source-code
 
 run:
-  path: source-code/mvnw
+  path: "source-code/mvnw"
   args: ["-DskipTests=true", "clean", "package"]
