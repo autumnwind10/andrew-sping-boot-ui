@@ -5,4 +5,4 @@ inputs:
 
 run:
   path: chmod
-  args: ["-R", "777", "."]
+  args: ["-R", "777", "source-code/*"]
