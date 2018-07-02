@@ -2,4 +2,5 @@ platform: linux
 
 run:
   path: ls
-  args: ["-lrt", ";", "chmod", "-R", "777", "source-code/*"]
+  args: ["-lrt"]
+#  args: ["-lrt", ";", "chmod", "-R", "777", "source-code/*"]
