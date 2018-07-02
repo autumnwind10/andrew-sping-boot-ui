@@ -1,8 +1,5 @@
 platform: linux
 
-inputs:
-  - name: source-code
-
 run:
   path: "ls"
   args: ["-lrt", "source-code"]
