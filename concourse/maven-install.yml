@@ -5,5 +5,5 @@ inputs:
 
 run:
   path: "ls"
-  args: ["-lrt"]
+  args: ["-lrt", "source-code"]
 #  args: ["-DskipTests=true", "clean", "package"]
