@@ -23,4 +23,6 @@ run:
     which java
     ./mvnw -DskipTests=true clean package
     cd target
+    pwd
     ls -lrt
+    cp andrew-sping-boot-ui-0.0.1-SNAPSHOT.jar /tmp/build/put/source-code/target/andrew-sping-boot-ui-0.0.1-SNAPSHOT.jar
