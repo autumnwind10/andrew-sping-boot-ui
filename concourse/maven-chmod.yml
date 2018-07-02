@@ -10,4 +10,4 @@ run:
   - |
     whoami
     ls -lrt
-    chmod -R 777 source-code/*
+    chmod -R 777 source-code
