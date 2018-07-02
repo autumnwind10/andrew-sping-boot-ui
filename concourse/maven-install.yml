@@ -3,8 +3,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: maven
-    tag: 3.5.4-jdk-10
+    repository: openjdk
+    tag: 10.0.1-10-jdk-sid
 
 inputs:
   - name: source-code
