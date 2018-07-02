@@ -4,4 +4,4 @@ applications:
   memory: 1024M
   instances: 1
   disk_quota: 500M
-  path: ./output-jar/andrew-sping-boot-ui-0.0.1-SNAPSHOT.jar
+  path: ../target/andrew-sping-boot-ui-0.0.1-SNAPSHOT.jar
