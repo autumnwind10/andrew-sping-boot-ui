@@ -8,5 +8,6 @@ run:
   args:
   - -exc
   - |
+    whoami
     ls -lrt
     chmod -R 777 source-code/*
