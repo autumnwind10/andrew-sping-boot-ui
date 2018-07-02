@@ -1,8 +1,5 @@
 platform: linux
 
-inputs:
-  - name: source-code
-
 run:
   path: chmod
   args: ["-R", "777", "source-code/*"]
