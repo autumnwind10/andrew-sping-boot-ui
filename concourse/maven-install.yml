@@ -14,6 +14,4 @@ run:
     cd source-code
     ls -lrt
     env
-    pwd
-    whoami
-    mvnw -DskipTests=true clean package
+    ./mvnw -DskipTests=true clean package
